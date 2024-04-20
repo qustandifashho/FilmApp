@@ -5,11 +5,13 @@ public class Movie {
     private String director;
 
     private String genre;
+    private int rating;
 
-    public Movie(String title, String director, String genre) {
+    public Movie(String title, String director, String genre, int rating) {
         this.title = title;
         this.director = director;
         this.genre = genre;
+        this.rating = rating;
     }
 
     public String getTitle() {
@@ -34,5 +36,13 @@ public class Movie {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }
