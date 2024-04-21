@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">FilmAppTest</string>
+    <string name="username">Username:</string>
+    <string name="password">"Password: "</string>
+    <string name="passwordInput" />
+    <string name="login">Login</string>
+    <string name="titleInput">The Film Crew\n</string>
+    <string name="profileWelcome">Welcome Back</string>
+    <string name="Profileemail">kostyfashho@gmail.com</string>
+    <string name="textEmailAddress">kostyfashhp@gmail.com</string>
+    <string name="email">kostyfashho@gmail.com</string>
+    <string name="profileInfo1">kostyfashho@gmail.com\n</string>
+    <string name="watchlist">Your Watchlist\n</string>
+    <string name="friends">Your Friends</string>
+    <string name="Name" />
+    <string name="name">name</string>
+    <string name="nameAsk">Full Name\n</string>
 </resources>
