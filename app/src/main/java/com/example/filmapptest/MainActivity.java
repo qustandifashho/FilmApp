@@ -25,10 +25,10 @@ public class MainActivity extends ComponentActivity {
         setContentView(R.layout.login); // we called it login. R links to res folder
         assets = getAssets();
         Toast.makeText(this, "App Opened", Toast.LENGTH_SHORT).show(); //LAB 5 for debugging
-        setupButtons();
+        //setupButtons();
     }
 
-    private void setupButtons() {
+    /*private void setupButtons() {
         button = (Button) findViewById(R.id.login);
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +50,8 @@ public class MainActivity extends ComponentActivity {
             }
         });
     }
+
+     */
 
     // second android studio lab
     private int authenticate(String username, String password) {
