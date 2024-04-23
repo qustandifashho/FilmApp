@@ -15,4 +15,7 @@
     <string name="Name" />
     <string name="name">name</string>
     <string name="nameAsk">Full Name\n</string>
+
+    <!-- Newly added string resource -->
+    <string name="Register">Register</string>
 </resources>
