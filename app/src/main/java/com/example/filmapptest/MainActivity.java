@@ -15,8 +15,33 @@ import androidx.annotation.Nullable;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class MainActivity extends ComponentActivity {
+public class MainActivity extends ComponentActivity{
+    @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.login);
+        setupButtons();
+    }
+
+    private void setupButtons(){
+        // this is for the register button (not login)
+        Button button = (Button) findViewById(R.id.registerButton);
+        button.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+    }
+}
+
+/*public class MainActivity extends ComponentActivity {
     private Button button;
+    private Button registerButton;
+
     private AssetManager assets;
 
     @Override
@@ -28,7 +53,7 @@ public class MainActivity extends ComponentActivity {
         //setupButtons();
     }
 
-    /*private void setupButtons() {
+    private void setupButtons() {
         button = (Button) findViewById(R.id.login);
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +76,7 @@ public class MainActivity extends ComponentActivity {
         });
     }
 
-     */
+
 
     // second android studio lab
     private int authenticate(String username, String password) {
@@ -83,7 +108,7 @@ public class MainActivity extends ComponentActivity {
         // make sure when writing to file you do .append not .write because .write gets rid of what is already in there
 
     }
-}
+}*/
 
 
 
