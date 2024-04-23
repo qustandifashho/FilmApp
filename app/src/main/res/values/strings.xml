@@ -18,4 +18,5 @@
 
     <!-- Newly added string resource -->
     <string name="Register">Register</string>
+    <string name="friendstitle">Friends List</string>
 </resources>
