@@ -5,9 +5,9 @@ public class Movie {
     private String director;
 
     private String genre;
-    private int rating;
+    private float rating;
 
-    public Movie(String title, String director, String genre, int rating) {
+    public Movie(String title, String director, String genre, float rating) {
         this.title = title;
         this.director = director;
         this.genre = genre;
@@ -38,7 +38,7 @@ public class Movie {
         this.genre = genre;
     }
 
-    public int getRating() {
+    public float getRating() {
         return rating;
     }
 
