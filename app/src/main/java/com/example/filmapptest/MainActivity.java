@@ -38,6 +38,19 @@ public class MainActivity extends ComponentActivity{
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+// Below is just from lab3-lab5 I pasted it here for reference if needed.
+
 /*public class MainActivity extends ComponentActivity {
     private Button button;
     private Button registerButton;
