@@ -17,7 +17,7 @@ public class ProfileActivity extends ComponentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
         assets = getAssets();
-        setupProfile();
+        setupProfile(); //hi
     }
 
     public void setupProfile(){
