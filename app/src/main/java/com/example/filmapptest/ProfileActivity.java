@@ -50,4 +50,4 @@ public class ProfileActivity extends ComponentActivity {
     }
 }
 
-}
+
