@@ -160,5 +160,45 @@ public class RegisterActivity extends ComponentActivity {
 
             }
         }
+
+
+
+
+
+        // Create empty watchlist file
+        File watchlistFile = new File(getFilesDir(), "watchlist_" + id + ".txt");
+        try {
+            if (!watchlistFile.exists()) {
+                watchlistFile.createNewFile();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(getBaseContext(), "IOException " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+        // Create empty friends list file
+        File friendsFile = new File(getFilesDir(), "friends_" + id + ".txt");
+        try {
+            if (!friendsFile.exists()) {
+                friendsFile.createNewFile();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(getBaseContext(), "IOException " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+
+        //  Create empty ranked list file
+        File rankedList = new File(getFilesDir(), "rankedList_" + id + ".txt");
+        try {
+            if (!rankedList.exists()) {
+                rankedList.createNewFile();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(getBaseContext(), "IOException " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
-}
+
+    }
+
