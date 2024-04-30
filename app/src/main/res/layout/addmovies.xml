@@ -2,40 +2,41 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#758187"
     android:padding="16dp">
 
     <EditText
         android:id="@+id/movieTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Title"/>
+        android:hint="Title" />
 
     <EditText
         android:id="@+id/movieDirector"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Director"
-        android:layout_below="@id/movieTitle"/>
+        android:layout_below="@id/movieTitle"
+        android:hint="Director" />
 
     <EditText
         android:id="@+id/movieGenre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Genre"
-        android:layout_below="@id/movieDirector"/>
+        android:layout_below="@id/movieDirector"
+        android:hint="Genre" />
 
     <RatingBar
         android:id="@+id/movieRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:numStars="5"
-        android:layout_below="@id/movieGenre"/>
+        android:layout_below="@id/movieGenre"
+        android:numStars="5" />
 
     <Button
         android:id="@+id/saveMovieButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save Movie"
         android:layout_below="@id/movieRating"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:text="Save Movie" />
 </RelativeLayout>

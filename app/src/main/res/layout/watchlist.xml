@@ -2,31 +2,32 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#758187"
     android:padding="16dp">
 
     <TextView
         android:id="@+id/watchListHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:text="Watch List"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
+        android:textStyle="bold" />
 
     <ListView
         android:id="@+id/moviesList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/watchListHeader"/>
+        android:layout_below="@id/watchListHeader" />
 
     <Button
         android:id="@+id/addMovieButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Movie"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="Add Movie" />
 </RelativeLayout>
 
 
