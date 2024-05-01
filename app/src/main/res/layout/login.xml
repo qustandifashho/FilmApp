@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:background="#758187">
 
+
     <TextView
         android:id="@+id/username"
         android:layout_width="wrap_content"
@@ -14,9 +15,13 @@
         android:text="@string/username"
         android:textColor="#020202"
         android:textSize="25sp"
+
         app:layout_constraintBottom_toTopOf="@+id/inputName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleview"
+        app:layout_constraintVertical_bias="0.831" />
 
     <EditText
         android:id="@+id/inputName"
@@ -26,9 +31,10 @@
         android:inputType="text"
         android:textColor="#000000"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="348dp" />
+        app:layout_constraintTop_toBottomOf="@+id/titleview" />
 
     <TextView
         android:id="@+id/inputPassword"
@@ -39,8 +45,10 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/passwordInput"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputName" />
+        app:layout_constraintTop_toBottomOf="@+id/inputName"
+        app:layout_constraintVertical_bias="0.837" />
 
     <EditText
         android:id="@+id/passwordInput"
@@ -94,12 +102,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="260dp"
-        android:layout_height="420dp"
+        android:layout_width="139dp"
+        android:layout_height="173dp"
+        app:layout_constraintBottom_toTopOf="@+id/username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/film_fotor_bg_remover_2024043023323"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintTop_toBottomOf="@+id/titleview"
+        app:layout_constraintVertical_bias="0.388"
+        app:srcCompat="@drawable/film_fotor_bg_remover_2024043023323" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
