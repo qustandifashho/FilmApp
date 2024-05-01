@@ -37,6 +37,7 @@
             app:layout_constraintVertical_bias="0.056" />
         <!-- app:srcCompat="@drawable/catprof" /> -->
 
+
         <Button
             android:id="@+id/friends"
             android:layout_width="wrap_content"
@@ -44,23 +45,23 @@
             android:text="friends"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/rate"
-            app:layout_constraintHorizontal_bias="0.565"
+            app:layout_constraintHorizontal_bias="0.454"
             app:layout_constraintStart_toStartOf="@+id/rate"
             app:layout_constraintTop_toBottomOf="@+id/email"
-            app:layout_constraintVertical_bias="0.222" />
-
+            app:layout_constraintVertical_bias="0.231" />
 
         <Button
             android:id="@+id/rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="rate"
+            android:text="Ranked List"
             app:layout_constraintBottom_toTopOf="@+id/watch"
             app:layout_constraintEnd_toEndOf="@+id/watch"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.454"
             app:layout_constraintStart_toStartOf="@+id/watch"
             app:layout_constraintTop_toBottomOf="@+id/friends"
-            app:layout_constraintVertical_bias="0.605" />
+            app:layout_constraintVertical_bias="0.585" />
+
 
         <Button
             android:id="@+id/watch"
@@ -69,10 +70,10 @@
             android:text="watch"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/friends"
-            app:layout_constraintVertical_bias="0.316" />
-
+            app:layout_constraintVertical_bias="0.307" />
 
         <TextView
             android:id="@+id/email"
