@@ -4,6 +4,8 @@ import androidx.activity.ComponentActivity;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import java.io.IOException;
 import java.util.Scanner;
@@ -19,10 +21,14 @@ public class ProfileActivity extends ComponentActivity {
         assets = getAssets();
         setupProfile(); //hi
     }
+    private int getId(){
+        Intent intent = getIntent();
+        int id = intent.getIntExtra("id", -1);
+        return id;
+    }
 
     public void setupProfile(){
-        Intent intent = getIntent();
-        int id = intent.getIntExtra("id",-1);
+        int id = getId();
 
         Scanner scnr;
         String str ="";
@@ -47,6 +53,19 @@ public class ProfileActivity extends ComponentActivity {
         TextView email = (TextView) findViewById(R.id.email);
         name.setText(profileinfo.getName());
         email.setText(profileinfo.getEmail());
+        setupButtons();
+    }
+    private void setupButtons(){
+        Button watchlistButton = (Button) findViewById(R.id.watch);
+        watchlistButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, WatchlistActivity.class);
+                intent.putExtra("id", getId());
+                startActivity(intent);
+            }
+
+
+        });
     }
 }
 
