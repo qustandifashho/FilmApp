@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#758187"
-    android:padding="16dp">
+    android:padding="60dp">
 
     <EditText
         android:id="@+id/movieTitle"
@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/movieTitle"
+        android:layout_marginTop="60dp"
         android:hint="Director" />
 
     <EditText
@@ -23,6 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/movieDirector"
+        android:layout_marginTop="60dp"
         android:hint="Genre" />
 
     <RatingBar
@@ -30,7 +32,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/movieGenre"
-        android:numStars="5" />
+        android:layout_marginTop="40dp"
+        android:numStars="5"
+        android:layout_centerHorizontal="true" /> <!-- Center horizontally -->
 
     <Button
         android:id="@+id/saveMovieButton"
@@ -38,5 +42,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/movieRating"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp"
         android:text="Save Movie" />
 </RelativeLayout>
