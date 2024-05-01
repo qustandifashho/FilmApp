@@ -101,15 +101,16 @@
         app:layout_constraintTop_toBottomOf="@id/loginButton" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="139dp"
-        android:layout_height="173dp"
+        android:id="@+id/imageView3"
+        android:layout_width="148dp"
+        android:layout_height="148dp"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/filmm"
         app:layout_constraintBottom_toTopOf="@+id/username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleview"
-        app:layout_constraintVertical_bias="0.388"
-        app:srcCompat="@drawable/film_fotor_bg_remover_2024043023323" />
+        app:layout_constraintTop_toBottomOf="@+id/titleview" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

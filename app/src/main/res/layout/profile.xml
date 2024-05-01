@@ -49,6 +49,7 @@
             app:layout_constraintTop_toBottomOf="@+id/email"
             app:layout_constraintVertical_bias="0.222" />
 
+
         <Button
             android:id="@+id/rate"
             android:layout_width="wrap_content"
@@ -71,6 +72,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/friends"
             app:layout_constraintVertical_bias="0.316" />
+
 
         <TextView
             android:id="@+id/email"
