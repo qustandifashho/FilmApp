@@ -61,6 +61,7 @@ public class ProfileActivity extends ComponentActivity {
         Button button1 = (Button) findViewById(R.id.friends);
         Button button2 = (Button) findViewById(R.id.rate);
         Button button3 = (Button) findViewById(R.id.watch);
+        Button button4 = (Button) findViewById(R.id.logout);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(ProfileActivity.this, RegisterActivity.class);
@@ -77,6 +78,11 @@ public class ProfileActivity extends ComponentActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ProfileActivity.this, WatchlistActivity.class);
                 startActivity(intent);
+            }
+        });
+        button4.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                finish();
             }
         });
 
