@@ -61,12 +61,6 @@ public class ProfileActivity extends ComponentActivity {
         }
     }
     private void setupButtons(){
-
-        Button watchlistButton = (Button) findViewById(R.id.watch);
-        Button friendslistButton = (Button) findViewById(R.id.friends);
-
-        watchlistButton.setOnClickListener(new View.OnClickListener(){
-
         Button button1 = (Button) findViewById(R.id.friends);
         Button button2 = (Button) findViewById(R.id.rate);
         Button button3 = (Button) findViewById(R.id.watch);
@@ -84,31 +78,17 @@ public class ProfileActivity extends ComponentActivity {
             }
         });
         button3.setOnClickListener(new View.OnClickListener(){
-
             public void onClick(View v) {
                 Intent intent = new Intent(ProfileActivity.this, WatchlistActivity.class);
                 intent.putExtra("id", getId());
                 startActivity(intent);
             }
         });
-
-
-        friendslistButton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v) {
-                Intent intent = new Intent(ProfileActivity.this, FriendsListActivity.class);
-                intent.putExtra("id", getId());
-                startActivity(intent);
-            }
-
-
-        });
-
         button4.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 finish();
             }
         });
-
 
     }
 }
