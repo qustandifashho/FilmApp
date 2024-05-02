@@ -40,11 +40,18 @@
             android:name=".AddMovieActivity"
             android:exported="false" />
         <activity
+
             android:name=".FriendsListActivity"
             android:exported="false" />
         <activity
             android:name=".AddFriendActivity"
             android:exported="false" />
+
+            android:name=".RankedListActivity"
+            android:exported="false"
+            android:label="rank_movies"
+            android:theme="@style/Theme.FilmAppTest"/>
+
     </application>
 
 </manifest>

@@ -27,6 +27,10 @@
 
     <string name="refresh">Refresh</string>
     <string name="addMovie">Add Movie</string>
+
     <string name="friendSearchDir">Search for a valid username (Warning: Capitalization matters)</string>
+
+
+    <string name="go_back">go_back</string>
 
 </resources>

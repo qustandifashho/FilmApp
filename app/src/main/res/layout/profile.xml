@@ -54,7 +54,7 @@
             android:id="@+id/rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ranked List"
+            android:text="Ranks"
             app:layout_constraintBottom_toTopOf="@+id/watch"
             app:layout_constraintEnd_toEndOf="@+id/watch"
             app:layout_constraintHorizontal_bias="0.454"
