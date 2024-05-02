@@ -72,61 +72,85 @@ public class RegisterActivity extends ComponentActivity {
     }
 
 
-    // is this for the internal storage of the account
-    // int is the account number
-    private int createLogin() { // make the file
-        // check that the necessary info for creating the account
-        EditText usernameInput = (EditText) findViewById(R.id.usernameEditText);
-        EditText passwordInput = (EditText) findViewById(R.id.passwordEditText);
+
+
+
+    private int createLogin() {
+        // Get the entered username and password
+        EditText usernameInput = findViewById(R.id.usernameEditText);
+        EditText passwordInput = findViewById(R.id.passwordEditText);
         String username = usernameInput.getText().toString();
         String password = passwordInput.getText().toString();
 
-        File f = new File(getFilesDir().getAbsolutePath() + "/login.txt"); // not the one in the assets forlder
-        OutputStreamWriter w = null;
-        Scanner scan;
+        // Initialize variables
+        File loginFile = new File(getFilesDir(), "login.txt");
+        Scanner scanner;
         int id = -1;
-        String str = null;
-        String[] arr;
-        // login.txt: id,username,password
-        if (!f.exists()) {
-            id = 1;
-            try {
-                w = new OutputStreamWriter(openFileOutput("login.txt", MODE_PRIVATE));
-                w.write(id + "," + username + "," + password);
-                w.close();
-            } catch (IOException e) {
-                Toast.makeText(getBaseContext(), "IOException " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        boolean usernameExists = false;
 
-            }
-
-        } else {
-            try {
-                scan = new Scanner(openFileInput("login.txt"));
-                while (scan.hasNextLine()) {  // while there is another line in our .txt file...
-                    str = scan.nextLine();
-                }
-                if (str != null) {
-                    arr = str.split(",");
-                    if (arr.length == 3) {
-                        id = Integer.parseInt(arr[0]) + 1;
+        try {
+            if (!loginFile.exists()) {
+                // If the login file doesn't exist, create it and write the first entry
+                id = 1;
+                OutputStreamWriter writer = new OutputStreamWriter(openFileOutput("login.txt", MODE_PRIVATE));
+                writer.write(id + "," + username + "," + password);
+                writer.close();
+            } else {
+                // If the login file exists, check for existing usernames
+                scanner = new Scanner(loginFile);
+                while (scanner.hasNextLine()) {
+                    String line = scanner.nextLine();
+                    String[] parts = line.split(",");
+                    if (parts.length >= 2 && parts[1].equals(username)) {
+                        // If the username already exists, set flag to true
+                        usernameExists = true;
+                        break;
                     }
                 }
-                scan.close();
+                scanner.close();
 
-                w = new OutputStreamWriter(openFileOutput("login.txt", MODE_APPEND));
-                w.append("\n" + id + "," + username + "," + password);
-                w.close();
+                if (!usernameExists) {
+                    // If the username is unique, append it to the login file
+                    scanner = new Scanner(loginFile);
+                    while (scanner.hasNextLine()) {
+                        String line = scanner.nextLine();
+                        String[] parts = line.split(",");
+                        if (parts.length >= 1) {
+                            id = Integer.parseInt(parts[0]);
+                        }
+                    }
+                    scanner.close();
 
-            } catch (IOException e) {
-                Toast.makeText(getBaseContext(), "IOException " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    // Increment id for the new account
+                    id++;
 
-
+                    OutputStreamWriter writer = new OutputStreamWriter(openFileOutput("login.txt", MODE_APPEND));
+                    writer.append("\n" + id + "," + username + "," + password);
+                    writer.close();
+                }
             }
-
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(getBaseContext(), "IOException " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        return id;
 
+        // If the username already exists, show an error message
+        if (usernameExists) {
+            Toast.makeText(getBaseContext(), "Please select a different username. This username is taken.", Toast.LENGTH_SHORT).show();
+        }
+
+        return id;
     }
+
+
+
+
+
+
+
+
+
+
 
 
     private void createAccount(int id) { // makign accounts.txt
@@ -160,5 +184,45 @@ public class RegisterActivity extends ComponentActivity {
 
             }
         }
+
+
+
+
+
+        // Create empty watchlist file
+        File watchlistFile = new File(getFilesDir(), "watchlist_" + id + ".txt");
+        try {
+            if (!watchlistFile.exists()) {
+                watchlistFile.createNewFile();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(getBaseContext(), "IOException " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+        // Create empty friends list file
+        File friendsFile = new File(getFilesDir(), "friends_" + id + ".txt");
+        try {
+            if (!friendsFile.exists()) {
+                friendsFile.createNewFile();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(getBaseContext(), "IOException " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+
+        //  Create empty ranked list file
+        File rankedList = new File(getFilesDir(), "rankedList_" + id + ".txt");
+        try {
+            if (!rankedList.exists()) {
+                rankedList.createNewFile();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(getBaseContext(), "IOException " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
-}
+
+    }
+

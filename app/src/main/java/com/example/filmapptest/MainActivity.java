@@ -30,8 +30,9 @@ public class MainActivity extends ComponentActivity {
     private void setupButtons() {
         //Button button1 = (Button) findViewById(R.id.loginButton);
         Button button2 = (Button) findViewById(R.id.registerButton);// lab 6
+        Button button1 = (Button) findViewById(R.id.loginButton);
 
-        /*button1.setOnClickListener(new View.OnClickListener() { // so this is just for the login button
+        button1.setOnClickListener(new View.OnClickListener() { // so this is just for the login button
             public void onClick(View v) {
                 EditText uText = findViewById(R.id.inputName);
                 EditText pText = findViewById(R.id.passwordInput);
@@ -48,7 +49,7 @@ public class MainActivity extends ComponentActivity {
 
                 }
             }
-        }); */
+        });
         button2.setOnClickListener(new View.OnClickListener(){ // lab 6 for the register button
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, com.example.filmapptest.RegisterActivity.class); // moves from mainActivity to Profile activity using intent
@@ -97,7 +98,6 @@ public class MainActivity extends ComponentActivity {
 
     }
 }
-
 
 
 

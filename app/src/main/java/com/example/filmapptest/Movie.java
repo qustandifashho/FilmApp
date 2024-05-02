@@ -1,6 +1,8 @@
 package com.example.filmapptest;
 
-public class Movie {
+import java.io.Serializable;
+
+public class Movie implements Serializable {
     private String title;
     private String director;
 
@@ -12,6 +14,7 @@ public class Movie {
         this.director = director;
         this.genre = genre;
         this.rating = rating;
+
     }
 
     public String getTitle() {
@@ -38,11 +41,12 @@ public class Movie {
         this.genre = genre;
     }
 
-    public float getRating() {
-        return rating;
-    }
+    public float getRating() {return rating;}
 
-    public void setRating(int rating) {
-        this.rating = rating;
+    public void setRating(int rating) {this.rating = rating;}
+
+    public String toString() {
+        return "Title: " + title + "\nDirector: " + director + "\nGenre: " + genre + "\nRating: " +
+                rating;
     }
 }
