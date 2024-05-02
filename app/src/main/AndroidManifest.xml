@@ -39,6 +39,11 @@
         <activity
             android:name=".AddMovieActivity"
             android:exported="false" />
+        <activity
+            android:name=".RankedListActivity"
+            android:exported="false"
+            android:label="rank_movies"
+            android:theme="@style/Theme.FilmAppTest"/>
     </application>
 
 </manifest>
