@@ -23,10 +23,13 @@ public class ProfileActivity extends ComponentActivity {
         setupProfile(); //hi ;p
         setupButtons();
     }
-
-    public void setupProfile(){
+    public int getId(){
         Intent intent = getIntent();
         int id = intent.getIntExtra("id",-1);
+        return id;
+    }
+
+    public void setupProfile(){
 
         Scanner scnr;
         String str ="";
@@ -39,8 +42,8 @@ public class ProfileActivity extends ComponentActivity {
                 while (scnr.hasNext()) {
                     str = scnr.nextLine();
                     arr = str.split(",");
-                    if (Integer.parseInt(arr[0]) == id) {
-                        profileinfo = new Account(id, arr[1], arr[2]);
+                    if (Integer.parseInt(arr[0]) == getId()) {
+                        profileinfo = new Account(getId(), arr[1], arr[2]);
                         break;
                     }
                 }
@@ -77,6 +80,7 @@ public class ProfileActivity extends ComponentActivity {
         button3.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(ProfileActivity.this, WatchlistActivity.class);
+                intent.putExtra("id", getId());
                 startActivity(intent);
             }
         });
