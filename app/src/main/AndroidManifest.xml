@@ -46,7 +46,7 @@
         <activity
             android:name=".AddFriendActivity"
             android:exported="false" />
-
+        <activity
             android:name=".RankedListActivity"
             android:exported="false"
             android:label="rank_movies"
