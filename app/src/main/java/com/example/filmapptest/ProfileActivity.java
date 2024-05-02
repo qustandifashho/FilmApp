@@ -73,7 +73,7 @@ public class ProfileActivity extends ComponentActivity {
         });
         button2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                Intent intent = new Intent(ProfileActivity.this, RegisterActivity.class);
+                Intent intent = new Intent(ProfileActivity.this, RankedListActivity.class);
                 startActivity(intent);
             }
         });
