@@ -10,7 +10,6 @@ import android.widget.ListView;
 import androidx.activity.ComponentActivity;
 
 public class FriendsListActivity extends ComponentActivity {
-    private ListView friendsList;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -21,7 +20,7 @@ public class FriendsListActivity extends ComponentActivity {
 
     private void setupButtons() {
         Button button1 = (Button) findViewById(R.id.addFriend);
-        friendsList = findViewById(R.id.friendsList);
+        ListView friendsList = findViewById(R.id.friendsList);
 
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -29,5 +28,7 @@ public class FriendsListActivity extends ComponentActivity {
             }
         });
     }
+
+
 
 }
