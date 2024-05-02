@@ -15,14 +15,12 @@ import java.util.Scanner;
 
 public class ProfileActivity extends ComponentActivity {
     private Account profileinfo;
-    //private AssetManager assets;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
-        //assets = getAssets();
-        setupProfile(); //hi
+        setupProfile(); //hi ;p
         setupButtons();
     }
 
@@ -77,7 +75,7 @@ public class ProfileActivity extends ComponentActivity {
         });
         button3.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                Intent intent = new Intent(ProfileActivity.this, RegisterActivity.class);
+                Intent intent = new Intent(ProfileActivity.this, WatchlistActivity.class);
                 startActivity(intent);
             }
         });
