@@ -62,7 +62,6 @@
         android:background="#FFFFFF"
         android:ems="10"
         android:inputType="textPassword"
-        android:text="passwordInput"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
