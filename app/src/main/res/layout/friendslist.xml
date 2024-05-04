@@ -11,6 +11,7 @@
         android:id="@+id/FriendsTitle"
         android:layout_width="193dp"
         android:layout_height="47dp"
+        android:fontFamily="cursive"
         android:text="@string/friendstitle"
         android:textAlignment="center"
         android:textSize="34sp"
