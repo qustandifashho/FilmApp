@@ -20,7 +20,7 @@ public class ProfileActivity extends ComponentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
-        setupProfile(); //hi ;p
+        setupProfile(); //hi ;p raahh
         setupButtons();
     }
     public int getId(){
