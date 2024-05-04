@@ -4,7 +4,7 @@
     android:id="@+id/addmovie"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#758187"
+    android:background="#FFFFFF"
     android:padding="16dp">
 
     <EditText
@@ -60,10 +60,10 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="cursive"
+        android:fontFamily="@font/palanquin_darkk"
         android:text="@string/addMovie"
-        android:textSize="40sp"
-        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="34sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

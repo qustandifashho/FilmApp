@@ -5,7 +5,7 @@
     android:id="@+id/constraintLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#758187"
+    android:background="#FFFFFF"
     >
 
     <TextView
@@ -26,8 +26,8 @@
         android:id="@+id/addFriendTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:fontFamily="cursive"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/palanquin_darkk"
         android:text="@string/addFriendTitle"
         android:textColor="@color/black"
         android:textSize="34sp"
@@ -63,9 +63,9 @@
         android:id="@+id/buttonGoBack2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:src="@android:drawable/ic_menu_revert"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@android:drawable/ic_menu_revert" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

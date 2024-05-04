@@ -4,19 +4,19 @@
     android:id="@+id/rankListLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#758187"
+    android:background="#FFFFFF"
     android:padding="16dp">
 
     <TextView
         android:id="@+id/rankListHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/palanquin_darkk"
         android:text="Movie Rankings"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:fontFamily="cursive"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#000000"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
@@ -35,7 +35,7 @@
             android:id="@+id/rankList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#758187" />
+            android:background="#FFFFFF" />
     </FrameLayout>
 
     <Button

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="#758187">
+    android:background="@drawable/blend">
 
     <TextView
         android:id="@+id/registerTitle"
@@ -12,87 +12,89 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="32dp"
-        android:fontFamily="cursive"
+        android:fontFamily="@font/palanquin_darkk"
         android:text="Create Account"
         android:textColor="#FFFFFF"
-        android:textSize="60sp" />
+        android:textSize="50sp" />
 
     <!-- Name EditText -->
     <EditText
         android:id="@+id/nameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Name"
-        android:textColor="#FFFFFF"
-        android:background="@android:color/transparent"
+        android:layout_width="388dp"
+        android:layout_height="50dp"
         android:layout_below="@id/registerTitle"
-        android:layout_marginTop="32dp"/>
+        android:layout_marginTop="32dp"
+        android:background="#FFFFFF"
+        android:hint="Name"
+        android:textColor="#000000" />
 
     <!-- Line under Name -->
-    <View
+
+    <!-- Username EditText -->
+
+    <!-- View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@id/nameEditText"
-        android:background="#B2BBBB"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="32dp"
+        android:background="#B2BBBB" -->
 
-    <!-- Username EditText -->
     <EditText
         android:id="@+id/usernameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Username"
-        android:textColor="#FFFFFF"
-        android:background="@android:color/transparent"
+        android:layout_width="388dp"
+        android:layout_height="50dp"
         android:layout_below="@id/nameEditText"
-        android:layout_marginTop="60dp"/>
+        android:layout_marginTop="50dp"
+        android:background="#FFFFFF"
+        android:hint="Username"
+        android:textColor="#000000" />
 
-    <!-- Line under Username -->
+    <!-- Line under Username
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@id/usernameEditText"
         android:background="#B2BBBB"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp" /> -->
 
     <!-- Email EditText -->
     <EditText
         android:id="@+id/emailEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:textColor="#FFFFFF"
-        android:background="@android:color/transparent"
+        android:layout_width="388dp"
+        android:layout_height="50dp"
         android:layout_below="@id/usernameEditText"
-        android:layout_marginTop="60dp"/>
+        android:layout_marginTop="50dp"
+        android:background="#FFFFFF"
+        android:hint="Email"
+        android:textColor="#000000" />
 
-    <!-- Line under Email -->
+    <!-- Line under Email
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@id/emailEditText"
         android:background="#B2BBBB"
-        android:layout_marginTop="8dp" />
-
+        android:layout_marginTop="8dp" /> -->
+    000000
     <!-- Password EditText -->
     <EditText
         android:id="@+id/passwordEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="388dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/emailEditText"
+        android:layout_marginTop="50dp"
+        android:background="#FFFFFF"
         android:hint="Password"
         android:inputType="textPassword"
-        android:textColor="#FFFFFF"
-        android:background="@android:color/transparent"
-        android:layout_below="@id/emailEditText"
-        android:layout_marginTop="60dp"/>
+        android:textColor="#000000" />
 
-    <!-- Line under Password -->
+    <!-- Line under Password
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@id/passwordEditText"
         android:background="#B2BBBB"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp" /> -->
 
     <Button
         android:id="@+id/CreateAccountButton"
