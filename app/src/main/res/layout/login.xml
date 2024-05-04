@@ -113,10 +113,10 @@
         android:layout_height="191dp"
         android:layout_marginEnd="152dp"
         android:layout_marginBottom="524dp"
-        android:src="film"
+        android:src="@drawable/w"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/w"/>
+        app:srcCompat="@drawable/w" />
     />
 
 
