@@ -4,7 +4,7 @@
     android:id="@+id/rankListLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#258187"
+    android:background="#758187"
     android:padding="16dp">
 
     <TextView
@@ -34,7 +34,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rankList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:background="#758187" />
     </FrameLayout>
 
     <Button

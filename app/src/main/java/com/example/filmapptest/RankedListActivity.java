@@ -2,10 +2,13 @@ package com.example.filmapptest;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.activity.ComponentActivity;
@@ -20,12 +23,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.filmapptest.R;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
 public class RankedListActivity extends ComponentActivity {
-    ArrayList<Movie> movies;
+    ArrayList<Movie> movies = new ArrayList<>();
     RecyclerView movieList;
     Adapter adapter;
 
@@ -36,13 +43,12 @@ public class RankedListActivity extends ComponentActivity {
 
         //Refresh button
         Button refresh = findViewById(R.id.refreshRankingsButton);
+        ImageButton backOut = findViewById(R.id.backButton);
 
-        //Get the movies
-        //FAKE MOVIES DELETE AND REPLACE WITH THE ACTUAL ONES
-        Movie one = new Movie("Best movie of all time", "Todd Howard", "Action", 1.0f);
-        Movie two = new Movie("Best movie of all time", "Todd Howard", "Action", 1.0f);
-        Movie three = new Movie("Best movie of all time", "Todd Howard", "Action", 1.0f);
-
+        //Movies -> Updates the watchlist everytime you go into the ranklist
+        updateMovies();
+        Collections.sort(movies, new MovieComparator());
+        Collections.reverse(movies);
 
         //Setup the view
         movieList = findViewById(R.id.rankList);
@@ -52,8 +58,9 @@ public class RankedListActivity extends ComponentActivity {
 
         refresh.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view0) {
+            public void onClick(View view) {
                 //Update the movies arraylist
+                updateMovies();
 
                 //Sort the movies using the compare function below
                 Collections.sort(movies, new MovieComparator());
@@ -62,6 +69,29 @@ public class RankedListActivity extends ComponentActivity {
                 adapter.notifyDataSetChanged();
             }
         });
+
+        backOut.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                onBackPressed();
+            }
+        });
+    }
+
+    public void updateMovies()
+    {
+        File watchlist = new File(getFilesDir(), "watchlist_"+getID()+".txt");
+        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(watchlist)))
+        {
+            movies = (ArrayList<Movie>) ois.readObject();
+        }
+        catch(Exception e)
+        {
+            Log.e("Ranked List", String.format("Cannot open file %s, please make sure it exists", "watchlist_"+getID()+".txt"));
+            e.printStackTrace();
+        }
     }
 
     public int getID() {
@@ -73,14 +103,11 @@ public class RankedListActivity extends ComponentActivity {
     private class MovieComparator implements Comparator<Movie> {
         @Override
         public int compare(Movie m1, Movie m2) {
-            Integer m1Rating = (int) (m1.getRating() * 100);
-            Integer m2Rating = (int) (m2.getRating() * 100);
-
-            int ratingTieBreaker = m1Rating.compareTo(m2Rating);
+            float ratingTieBreaker = Float.compare(m1.getRating(), m2.getRating());
             int nameTieBreaker = m1.getTitle().compareTo(m2.getTitle());
             int genreTieBreaker = m1.getGenre().compareTo(m2.getGenre());
 
-            if (ratingTieBreaker != 0) return ratingTieBreaker;
+            if (ratingTieBreaker != 0f) return (int) (ratingTieBreaker * 100f);
             else if (nameTieBreaker != 0) return nameTieBreaker;
             else return genreTieBreaker;
         }
@@ -118,19 +145,19 @@ public class RankedListActivity extends ComponentActivity {
         }
     }
 
-    private static class ViewHolder extends RecyclerView.ViewHolder
+    private class ViewHolder extends RecyclerView.ViewHolder
     {
         TextView information;
 
         public ViewHolder(LayoutInflater inflater, ViewGroup parent)
         {
-            super(inflater.inflate(R.layout.addmovies, parent, false));
-            information = itemView.findViewById(R.id.movieGenre);
+            super(inflater.inflate(R.layout.movie_item, parent, false));
+            information = itemView.findViewById(R.id.movie_info);
         }
 
         public void bind(Movie movie)
         {
-            information.setText(movie.toString());
+            information.setText(movie.toString() + "\n");
         }
     }
 }

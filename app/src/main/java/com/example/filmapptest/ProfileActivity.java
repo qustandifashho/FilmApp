@@ -67,13 +67,15 @@ public class ProfileActivity extends ComponentActivity {
         Button button4 = (Button) findViewById(R.id.logout);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(ProfileActivity.this, RegisterActivity.class);
+                Intent intent = new Intent(ProfileActivity.this, FriendsListActivity.class);
+                intent.putExtra("id", getId());
                 startActivity(intent);
             }
         });
         button2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(ProfileActivity.this, RankedListActivity.class);
+                intent.putExtra("id", getId());
                 startActivity(intent);
             }
         });

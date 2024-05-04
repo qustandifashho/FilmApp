@@ -19,7 +19,18 @@
     <!-- Newly added string resource -->
     <string name="Register">Register</string>
     <string name="friendstitle">Friends List</string>
+
+    <string name="addfriend">Add Friend</string>
+    <string name="friendSearch">Search for a username:</string>
+    <string name="addFriendTitle">Add Friend</string>
+    <string name="SaveFriend">Save Friend</string>
+
     <string name="refresh">Refresh</string>
     <string name="addMovie">Add Movie</string>
+
+    <string name="friendSearchDir">Search for a valid username (Warning: Capitalization matters)</string>
+
+
     <string name="go_back">go_back</string>
+
 </resources>
